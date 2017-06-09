@@ -2,6 +2,14 @@ README for Surgical Robotics
 Authors: Zach Patterson, Brett Wolfinger
 Contacts: zjp5@pitt.edu bwolfin1@jhu.edu
 
+When downloading to new computer, cython must be installed. Compile the setup.py file using this command on the command line:
+
+	python setup.py build_ext --inplace
+
+this will initialize the cython modules and dependencies that the driver code requires to run.
+
+
+
 Driver file: SqueezeSTB.py
 Command line arguments (Each flag is followed by the desired value to pass):
 	"-s" or "--subject" (Subject ID Number, default: 1)
