@@ -1,3 +1,9 @@
+Summer 2017
+
+-Push to github as 1.1
+-Gui?
+
+OLD
 - Make list of everything we need to take with us, and tape it onto the box
 - Make it return error on 0 bias matrix (no power)
 - Change timestamping to remove :, 
@@ -31,4 +37,3 @@ possible features:
 
 RING ROLLERCOASTER #3
 - can actually see the force pretty well, low but measurable
--
