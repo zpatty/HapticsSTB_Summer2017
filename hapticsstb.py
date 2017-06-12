@@ -18,6 +18,7 @@ PLOT_FT = 1
 PLOT_M40V = 2
 PLOT_ACC = 3
 PLOT_POS = 4
+PLOT_ANG = 5
 
 # Serial Commands, whenever one of these appear in the code, remember to check
 # what it's resulting action in the arduino code is.
@@ -117,6 +118,9 @@ class STB(object):
         self.video_thread = OpenCVThread(self.cap, out)
         self.video = True
 
+    def get_position(self, pos):
+	self.pos = pos
+
     """
     Initializes the plot variables
 
@@ -137,6 +141,8 @@ class STB(object):
             self.plot_data = np.zeros((line_length, 6))
         elif self.plot_type == PLOT_ACC:
             self.plot_data = np.zeros((line_length, 9))
+	elif self.plot_type == PLOT_ANG:
+	    self.plot_data = np.zeros((line_length,2))
         else:
             print "Unrecognized plotting type!"
             sys.exit()
@@ -295,7 +301,10 @@ class STB(object):
             new_data = self.get_m40v()
         elif self.plot_type == PLOT_ACC:
             new_data = self.get_acc()
-
+	elif self.plot_type == PLOT_ANG:
+	    new_data = self.pos
+	
+	
         self.plot_data = np.roll(self.plot_data, -1, axis=0)
         self.plot_data[-1, 0:] = new_data
         if self.frame % 50 == 0:
@@ -352,7 +361,7 @@ def plotting_setup(plot_type, line_length):
 
     pl.ion()
 
-    if plot_type in [PLOT_FT, PLOT_M40V, PLOT_ACC]:
+    if plot_type in [PLOT_FT, PLOT_M40V, PLOT_ACC, PLOT_ANG]:
         start_time = -1*(line_length-1)/500.0
         times = np.linspace(start_time, 0, line_length)
 
@@ -436,6 +445,17 @@ def plotting_setup(plot_type, line_length):
         touch_point, = pl.plot(0, 0, marker="o", markersize=50)
 
         plot_objects = (touch_point,)
+        pl.draw()
+
+    #plot angle
+    elif plot_type == 5:
+
+        pl.axis([start_time, 0, 90, 160])
+        pl.grid()
+        angle_line, = pl.plot(times, [100]*line_length, color='r')
+	
+	pl.legend([angle_line],['Servo Angle'],loc=2)
+        plot_objects = (angle_line,)
         pl.draw()
 
     else:

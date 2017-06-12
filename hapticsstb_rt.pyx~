@@ -163,7 +163,7 @@ def plotting_updater(plot_type, np.ndarray[np.float64_t, ndim = 2] data, plot_ob
 
 
 	if plot_type == PLOT_ANG:
-		plot_objects[0].set_ydata(data[:,0].T)
+		plot_objects.set_ydata(data[:,0].T)
 
 
 	pl.draw()

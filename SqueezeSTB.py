@@ -31,7 +31,7 @@ parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument("-s", "--subject", type=str, default='1', help="Subject ID Number")
 parser.add_argument("-t", "--task", type=str, default='1', help="Task ID Number")
 
-parser.add_argument("-p", "--plot", type=int, default=0, choices=[1,2,3,4],
+parser.add_argument("-p", "--plot", type=int, default=0, choices=[1,2,3,4,5],
                     help=
 """Set sample rate to 500Hz and display line plots for
 debugging
@@ -117,8 +117,8 @@ try:
 	servo_min = servo.getPositionMin(motor) + 100
 	servo_max = servo.getPositionMin(motor) + 150
 	servo_mid = (servo_max - servo_min)/2
-	servo.setAcceleration(1, 500)
-	servo.setAcceleration(motor, 500) # I just picked these to be smooth, feel free to change
+	servo.setAcceleration(1, 2000)
+	servo.setAcceleration(motor, 2000) # I just picked these to be smooth, feel free to change
 	servo.setVelocityLimit(1, 2000)
 	servo.setVelocityLimit(motor, 2000)
 except PhidgetException as e:
@@ -248,11 +248,18 @@ while True: # Runs once if args.pedal is false
 						servo.setPosition(0, servo_min)
 						servo.setPosition(1, servo_min)
 
+
 			else:
 				servo.setPosition(1, servo_min)
 				servo.setPosition(0, servo_min)
 			#continually update plot if using one
 			if args.plot:
+				if pos <= servo_max and pos >= servo_min:
+					sensor.get_position(pos)
+				elif pos > servo_max:
+					sensor.get_position(servo_max)
+				elif pos < servo_min:
+					sensor.get_position(servo_min)			
 				sensor.plot_update()
 
 			#If using a pedal, the second petal press stops the trial
