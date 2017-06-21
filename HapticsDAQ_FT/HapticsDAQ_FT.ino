@@ -2,20 +2,25 @@
 #include <SPI.h>
 
 
-#define RESET 			0x10
+#define RESET 			0x10 // reset signal
 
-#define LED_1			4
+//LED Pins
+#define LED_1			4 
 #define LED_2			3
 #define LED_3			6
 #define LED_4			5
 
-#define SETUP_ACC 		0x64
-#define CONV_ACC 		0xC0
-#define CS_ACC 			7
+// Signals for register settings for the accelerometer DAQ
+#define SETUP_ACC 		0x64 // Sets the setup register: use internal clock with internally timed sampling ...
+// ... external single ended voltage reference with no wake up delay
+#define CONV_ACC 		0xC0 // Set conversion register, scan AIN0-8
+#define CS_ACC 			7 // Slave select to pin 7 on the microcontroller
 
-#define SETUP_FT		0x6B
-#define CONV_FT 		0xD8
-#define CS_FT			9
+// Signals for register settings for the mini40
+#define SETUP_FT		0x6B // Sets the setup register: use internal clock with internally timed sampling ...
+// ... Use internal reference (always on) with no wake up delay, write to bipolar mode register
+#define CONV_FT 		0xD8 // Set conversion register, scan AIN0-11
+#define CS_FT			9 // Slave select to pin 9 on the microcontroller
 
 #define SAMPLE_RATE 	2000 // Delay in us between samples
 
@@ -42,7 +47,7 @@
 #define STOP 0x02
 #define PING 0x03
 
-IntervalTimer irq;
+IntervalTimer irq; // initialize irq as interrupt variable
 
 
 byte convReg(byte channel, byte scan_mode, byte temp)
@@ -57,24 +62,27 @@ byte setupReg(byte cksel, byte refsel, byte diffsel)
 	return command;
 }
 
+// this function reads data from each DAQ at intervals specified by the user and transmits it back to the computer
 void readADC(void)
 {
-	static byte j = 0;
-	static byte data[31];
+	static byte j = 0; //counts packet "ID" number
+	static byte data[31]; // stores the data
 	byte i = 0;
 
 	j++;
 
 	Serial.flush();
 
+  // read mini40
 	for (i = 0; i < 12; i++)
 	{	
-		digitalWrite(CS_FT, LOW);
-		data[i] = SPI.transfer(0x00);
-		digitalWrite(CS_FT, HIGH);
+		digitalWrite(CS_FT, LOW); // pull Slave select low (active low)
+		data[i] = SPI.transfer(0x00); // Send 0x00 - powers up all DAQ registers (sans Setup) - and receives the latest reading
+		digitalWrite(CS_FT, HIGH); // deselect slave
 		delayMicroseconds(2);
 	}
 
+  //same as above for accelerometers
 	for (i = 12; i < 30; i++)
 	{	
 		digitalWrite(CS_ACC, LOW);
@@ -83,10 +91,12 @@ void readADC(void)
 		delayMicroseconds(2);
 	}
 
+  // set the last byte of data to be the ID number
 	data[30] = j;
 
-	Serial.write(data, 31);
+	Serial.write(data, 31); // write to USB
 
+  // set conversion registers again
 	digitalWrite(CS_FT, LOW);
 	SPI.transfer(CONV_FT);
 	digitalWrite(CS_FT, HIGH);
@@ -98,24 +108,26 @@ void readADC(void)
 }
 void pulseCS(char pin)
 {
-	// Pulses the CS line in between SPI bytes
+	// Pulses the CS line in between SPI bytes (see datasheet for explanation)
 	digitalWrite(pin, HIGH);
 	delayMicroseconds(2);
 	digitalWrite(pin, LOW);
 }
 
+// setup routine for the mini40 DAQ
 void setupFT(void)
 {
-	digitalWrite(CS_FT, LOW);
-	SPI.transfer(RESET);
-	pulseCS(CS_FT);
-	SPI.transfer(SETUP_FT);
-	SPI.transfer(0xFF);
-	pulseCS(CS_FT);
-	SPI.transfer(CONV_FT);
-	digitalWrite(CS_FT, HIGH);
+	digitalWrite(CS_FT, LOW); //Slave select
+	SPI.transfer(RESET); // reset registers
+	pulseCS(CS_FT); // pulse slave select
+	SPI.transfer(SETUP_FT); // set setup register
+	SPI.transfer(0xFF); // set all inputs to bipolar mode
+	pulseCS(CS_FT); // pulse again
+	SPI.transfer(CONV_FT); // set converstion register
+	digitalWrite(CS_FT, HIGH); // slave deselect
 }
 
+// for acceleromters, same as above except no need to set bipolar register
 void setupACC(void)
 {
 	digitalWrite(CS_ACC, LOW);
@@ -127,6 +139,7 @@ void setupACC(void)
 	digitalWrite(CS_ACC, HIGH);
 }
 
+// setup function for the microcontroller
 void setup(void)
 {
 
@@ -155,50 +168,56 @@ void setup(void)
 	SPI.setDataMode(SPI_MODE0);
 }
 
+// main loop
 void loop(void)
 {
-	byte message[5];
+	byte message[5]; // stores initial reading from computer
 	byte sample_rate_buff[2];
-	int sample_rate;
-	byte packet_length;
+	int period;
+	byte packet_length; // length of initial reading from computer
 
 	if (Serial.available())
 	{
 		noInterrupts();
-		packet_length = Serial.available();
+		packet_length = Serial.available(); 
 
+    // loop aggregates the serial reading into a single array
 		for (int i = 0; i < packet_length; i++)
 		{
 			message[i] = Serial.read();
 		}
+   
+		Serial.flush(); // flush serial port
 
-		Serial.flush();
-
-		if (message[0] == START)
+    // loop obtains sample rate set on computer
+		if (message[0] == START) // note that START is an arbitrary hex number (0x01)
 		{
 			if (packet_length > 1)
 			{
-				sample_rate = 1000000/((int)(message[1]<<8) + (int)message[2]);
+				period = 1000000/((int)(message[1]<<8) + (int)message[2]); //reconstructs the period (was sent as 2 bytes)
 				// delay(1);
 			}
 
 			else
 			{
-				sample_rate = SAMPLE_RATE;
+				period = SAMPLE_RATE;
 			}
 			
 			// delay(1);
+      //setup ADC registers
 			setupACC();
 			setupFT();
 			
-			delayMicroseconds(sample_rate);
+			delayMicroseconds(period); 
 
-			irq.begin(readADC, sample_rate);
+			irq.begin(readADC, period); // begin sampling at the specified rate
 		}
 
+    // end sampling if computer tells us to
 		if (message[0] == STOP)
 			irq.end();
 
+    // Ping function for device ID confirmation (works with get_device function in hapticsstb.py)
 		if (message[0] == PING)
 			{
 				irq.end();
