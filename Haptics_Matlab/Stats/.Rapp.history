@@ -1,0 +1,1027 @@
+demo()
+lm.glm
+glm()
+stats
+demo(package = .packages(all.available = TRUE))
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=1#
+coefficient2=2#
+coefficient3=4#
+sd1=0.5#
+sd2=0.5#
+sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,7)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+count
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=1#
+coefficient2=2#
+coefficient3=4#
+sd1=0.5#
+sd2=0.5#
+sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,7)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+OR_range
+c(0,7)
+c(0,7,8)
+c(0,7)+c(-1,1)
+count
+lowerCI
+1.96*sd1
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,7)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,3)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,7)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,3)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+OR_range=OR_range+c(0,1)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,3)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+OR_range=OR_range+c(0,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,7)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+OR_range
+count
+ylim
+OR_range
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,7)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+OR_range=OR_range+c(0,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,7)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,7)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+OR_range=OR_range+c(0,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,7)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,7)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,7)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,4)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,3)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.674#
+coefficient2=0.490#
+coefficient3=0.617#
+sd1=0.332#
+sd2=0.333#
+sd3=0.341#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,3)#
+#Legend in reverse order, reference group first#
+legend=c("Block 4","Block 3","Block 2","Block 1")#
+#Label for X axis and Y axis#
+xlab="Blocks"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,0,coefficient1),c(1,0,coefficient2,0),c(1,coefficient3,0,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)#
+#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,3),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2,coefficient3-1.96*sd3)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2,coefficient3+1.96*sd3)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.363#
+coefficient2=0.114#
+#coefficient3=4#
+sd1=0.195#
+sd2=0.198#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,7)#
+#Legend in reverse order, reference group first#
+legend=c("Force","Vibro","None")#
+#Label for X axis and Y axis#
+xlab="Conditions"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1),c(1,coefficient2,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,2),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.363#
+coefficient2=0.114#
+#coefficient3=4#
+sd1=0.195#
+sd2=0.198#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,2)#
+#Legend in reverse order, reference group first#
+legend=c("Force","Vibro","None")#
+#Label for X axis and Y axis#
+xlab="Conditions"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1),c(1,coefficient2,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,2),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+sd2=0.192
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=-0.359#
+coefficient2=-0.244#
+#coefficient3=4#
+sd1=0.194#
+sd2=0.192#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,2)#
+#Legend in reverse order, reference group first#
+legend=c("Force","Vibro","None")#
+#Label for X axis and Y axis#
+xlab="Conditions"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1),c(1,coefficient2,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,2),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.359#
+coefficient2=0.115#
+#coefficient3=4#
+sd1=0.194#
+sd2=0.197#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,2)#
+#Legend in reverse order, reference group first#
+legend=c("Force","Vibro","None")#
+#Label for X axis and Y axis#
+xlab="Conditions"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1),c(1,coefficient2,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,2),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1,coefficient2-1.96*sd2)+1#
+upperCI=c(coefficient1+1.96*sd1,coefficient2+1.96*sd2)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.469#
+#coefficient2=0.115#
+#coefficient3=4#
+sd1=0.194#
+#sd2=0.197#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,2)#
+#Legend in reverse order, reference group first#
+legend=c("Heavy","Light")#
+#Label for X axis and Y axis#
+xlab="Weight"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,1),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(coefficient1-1.96*sd1)+1#
+upperCI=c(coefficient1+1.96*sd1)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=1.438#
+coefficient2=1.121#
+#coefficient3=4#
+#sd1=0.194#
+#sd2=0.197#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,2)#
+#Legend in reverse order, reference group first#
+legend=c("Force","Vibro","None")#
+#Label for X axis and Y axis#
+xlab="Conditions"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1),c(1,coefficient2,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,2),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(0.981,0.760)+1#
+upperCI=c(2.107,1.6523)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=1.438#
+coefficient2=1.121#
+#coefficient3=4#
+#sd1=0.194#
+#sd2=0.197#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,2)#
+#Legend in reverse order, reference group first#
+legend=c("Force","Vibro","None")#
+#Label for X axis and Y axis#
+xlab="Conditions"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1),c(1,coefficient2,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,2),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(0.981,0.760)+exp(1)#
+upperCI=c(2.107,1.6523)+exp(1)#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=1.438#
+coefficient2=1.121#
+#coefficient3=4#
+#sd1=0.194#
+#sd2=0.197#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,2)#
+#Legend in reverse order, reference group first#
+legend=c("Force","Vibro","None")#
+#Label for X axis and Y axis#
+xlab="Conditions"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1),c(1,coefficient2,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,2),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(0.981,0.760)+1#
+upperCI=c(2.107,1.6523)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.438#
+coefficient2=0.121#
+#coefficient3=4#
+#sd1=0.194#
+#sd2=0.197#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,2)#
+#Legend in reverse order, reference group first#
+legend=c("Force","Vibro","None")#
+#Label for X axis and Y axis#
+xlab="Conditions"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1),c(1,coefficient2,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,2),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(0.981,0.760)+1#
+upperCI=c(2.107,1.6523)+1#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.438#
+coefficient2=0.121#
+#coefficient3=4#
+#sd1=0.194#
+#sd2=0.197#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,2)#
+#Legend in reverse order, reference group first#
+legend=c("Force","Vibro","None")#
+#Label for X axis and Y axis#
+xlab="Conditions"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1),c(1,coefficient2,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,2),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(0.981,0.760)#
+upperCI=c(2.107,1.6523)#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.438#
+coefficient2=0.121#
+#coefficient3=4#
+#sd1=0.194#
+#sd2=0.197#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,2.2)#
+#Legend in reverse order, reference group first#
+legend=c("Force","Vibro","None")#
+#Label for X axis and Y axis#
+xlab="Conditions"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1),c(1,coefficient2,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,2),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(0.981,0.760)#
+upperCI=c(2.107,1.6523)#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.585#
+#coefficient2=0.115#
+#coefficient3=4#
+sd1=0.194#
+#sd2=0.197#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,2.2)#
+#Legend in reverse order, reference group first#
+legend=c("Heavy","Light")#
+#Label for X axis and Y axis#
+xlab="Weight"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,1),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(1.159)#
+upperCI=c(2.166)#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=0.433#
+coefficient2=0.124#
+#coefficient3=4#
+#sd1=0.194#
+#sd2=0.197#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,2.2)#
+#Legend in reverse order, reference group first#
+legend=c("Force","Vibro","None")#
+#Label for X axis and Y axis#
+xlab="Conditions"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1),c(1,coefficient2,0))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,2),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(0.979,0.764)#
+upperCI=c(2.098,1.655)#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=1.926#
+#coefficient2=0.115#
+#coefficient3=4#
+sd1=0.194#
+#sd2=0.197#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,2.2)#
+#Legend in reverse order, reference group first#
+legend=c("Heavy","Light")#
+#Label for X axis and Y axis#
+xlab="Weight"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,1),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(0.617)#
+upperCI=c(13.87)#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=1.926#
+#coefficient2=0.115#
+#coefficient3=4#
+sd1=0.194#
+#sd2=0.197#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,15)#
+#Legend in reverse order, reference group first#
+legend=c("Heavy","Light")#
+#Label for X axis and Y axis#
+xlab="Weight"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,1),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(0.617)#
+upperCI=c(13.87)#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+################################
+#input the coefficient estimates and corresponding standard deviation in order#
+coefficient1=1.926#
+#coefficient2=0.115#
+#coefficient3=4#
+sd1=0.194#
+#sd2=0.197#
+#sd3=0.5#
+#range of coefficient estimates, for determining plot scale, in form of c(min, max)#
+OR_range=c(0,15)#
+#Legend in reverse order, reference group first#
+legend=c("Able","Ampu")#
+#Label for X axis and Y axis#
+xlab="Weight"#
+ylab="Odds Ratio"#
+##############################
+#OR_range=OR_range+c(-1,1)#
+count=cbind(c(1,0,coefficient1))#
+bar=barplot(count,ylim=OR_range,width=0.5,xlim=c(0,1),space=0.5,#
+        legend = legend,#
+        xlab=xlab,ylab=ylab)#
+lowerCI=c(0.617)#
+upperCI=c(13.87)#
+arrows(bar,lowerCI,bar, upperCI,angle=90,code=3,length=0.2)#
+abline(1,0)
+squeezeData <- read.csv("SqueezeDataR.dat", sep = ',',header = TRUE, na.strings = 'NaN')#
+squeezeData$Group <- factor(squeezeData$Group)#
+#squeezeData$Trial <- factor(squeezeData$Trial)#
+squeezeData$Haptic <- factor(squeezeData$Haptic)#
+squeezeData$Phase <- factor(squeezeData$Phase)#
+#
+library( ez); library( ggplot2); library( nlme); library( pastecs); library( reshape); library( WRS2)#
+#
+# standard contrast (Phase1vs2 and Phase1vs3)#
+Phase1vs2 <- c(0,1,0)#
+Phase1vs3 <- c(0,0,1)#
+contrasts(squeezeData$Phase)<-cbind(Phase1vs2,Phase1vs3)#
+#
+baselineInt1 <- lme(IntMag ~ 1, random = ~1|Sub/Phase, data = squeezeData, na.action=na.omit, method = "ML")#
+phaseInt1 <- update(baselineInt1, .~. + Phase)#
+groupInt1 <- update(phaseInt1, .~. + Group)#
+phase_group_Int1 <- update(groupInt1, .~. + Phase:Group)#
+anova(baselineInt1, phaseInt1, groupInt1, phase_group_Int1)#
+summary(phase_group_Int1)#
+by(squeezeData$IntMag, list(squeezeData$Phase,squeezeData$Group),stat.desc,basic = FALSE)#
+#by(squeezeData$IntMag, list(squeezeData$Group),stat.desc,basic = FALSE)#
+#
+# new contrasts (Phase2vs1 and Phase2vs3)#
+Phase2vs1 <- c(1,0,0)#
+Phase2vs3 <- c(0,0,1)#
+contrasts(squeezeData$Phase)<-cbind(Phase2vs1,Phase2vs3)#
+#
+baselineInt2 <- lme(IntMag ~ 1, random = ~1|Sub/Phase, data = squeezeData, na.action=na.omit, method = "ML")#
+phaseInt2 <- update(baselineInt2, .~. + Phase)#
+groupInt2 <- update(phaseInt2, .~. + Group)#
+phase_group_Int2 <- update(groupInt2, .~. + Phase:Group)#
+anova(baselineInt2, phaseInt2, groupInt2, phase_group_Int2)#
+summary(phase_group_Int2)#
+by(squeezeData$IntMag, list(squeezeData$Phase,squeezeData$Group),stat.desc,basic = FALSE)#
+#by(squeezeData$IntMag, list(squeezeData$Group),stat.desc,basic = FALSE)
+squeezeData <- read.csv("SqueezeDataR.dat", sep = ',',header = TRUE, na.strings = 'NaN')#
+squeezeData$Group <- factor(squeezeData$Group)#
+#squeezeData$Trial <- factor(squeezeData$Trial)#
+squeezeData$Haptic <- factor(squeezeData$Haptic)#
+squeezeData$Phase <- factor(squeezeData$Phase)#
+#
+library( ez); library( ggplot2); library( nlme); library( pastecs); library( reshape); library( WRS2)#
+#
+# standard contrast (Phase1vs2 and Phase1vs3)#
+Phase1vs2 <- c(0,1,0)#
+Phase1vs3 <- c(0,0,1)#
+contrasts(squeezeData$Phase)<-cbind(Phase1vs2,Phase1vs3)#
+#
+baselineInt1 <- lme(IntMag ~ 1, random = ~1|Sub/Phase, data = squeezeData, na.action=na.omit, method = "ML")#
+phaseInt1 <- update(baselineInt1, .~. + Phase)#
+groupInt1 <- update(phaseInt1, .~. + Group)#
+phase_group_Int1 <- update(groupInt1, .~. + Phase:Group)#
+anova(baselineInt1, phaseInt1, groupInt1, phase_group_Int1)#
+summary(phase_group_Int1)#
+by(squeezeData$IntMag, list(squeezeData$Phase,squeezeData$Group),stat.desc,basic = FALSE)#
+#by(squeezeData$IntMag, list(squeezeData$Group),stat.desc,basic = FALSE)#
+#
+# new contrasts (Phase2vs1 and Phase2vs3)#
+Phase2vs1 <- c(1,0,0)#
+Phase2vs3 <- c(0,0,1)#
+contrasts(squeezeData$Phase)<-cbind(Phase2vs1,Phase2vs3)#
+#
+baselineInt2 <- lme(IntMag ~ 1, random = ~1|Sub/Phase, data = squeezeData, na.action=na.omit, method = "ML")#
+phaseInt2 <- update(baselineInt2, .~. + Phase)#
+groupInt2 <- update(phaseInt2, .~. + Group)#
+phase_group_Int2 <- update(groupInt2, .~. + Phase:Group)#
+anova(baselineInt2, phaseInt2, groupInt2, phase_group_Int2)#
+summary(phase_group_Int2)#
+by(squeezeData$IntMag, list(squeezeData$Phase,squeezeData$Group),stat.desc,basic = FALSE)#
+#by(squeezeData$IntMag, list(squeezeData$Group),stat.desc,basic = FALSE)
+squeezeData <- read.csv("SqueezeDataR.dat", sep = ',',header = TRUE, na.strings = 'NaN')#
+squeezeData$Group <- factor(squeezeData$Group)#
+#squeezeData$Trial <- factor(squeezeData$Trial)#
+squeezeData$Haptic <- factor(squeezeData$Haptic)#
+squeezeData$Phase <- factor(squeezeData$Phase)#
+#
+library( ez); library( ggplot2); library( nlme); library( pastecs); library( reshape); library( WRS2)#
+#
+# standard contrast (Phase1vs2 and Phase1vs3)#
+Phase1vs2 <- c(0,1,0)#
+Phase1vs3 <- c(0,0,1)#
+contrasts(squeezeData$Phase)<-cbind(Phase1vs2,Phase1vs3)#
+#
+baselineTime1 <- lme(Time ~ 1, random = ~1|Sub/Phase, data = squeezeData, na.action=na.omit, method = "ML")#
+phaseTime1 <- update(baselineTime1, .~. + Phase)#
+groupTime1 <- update(phaseTime1, .~. + Group)#
+phase_group_Time1 <- update(groupTime1, .~. + Phase:Group)#
+anova(baselineTime1, phaseTime1, groupTime1, phase_group_Time1)#
+summary(phase_group_Time1)#
+by(squeezeData$Time, list(squeezeData$Phase,squeezeData$Group),stat.desc,basic = FALSE)#
+#by(squeezeData$Time, list(squeezeData$Group),stat.desc,basic = FALSE)#
+#
+# new contrasts (Phase2vs1 and Phase2vs3)#
+Phase2vs1 <- c(1,0,0)#
+Phase2vs3 <- c(0,0,1)#
+contrasts(squeezeData$Phase)<-cbind(Phase2vs1,Phase2vs3)#
+#
+baselineTime2 <- lme(Time ~ 1, random = ~1|Sub/Phase, data = squeezeData, na.action=na.omit, method = "ML")#
+phaseTime2 <- update(baselineTime2, .~. + Phase)#
+groupTime2 <- update(phaseTime2, .~. + Group)#
+phase_group_Time2 <- update(groupTime2, .~. + Phase:Group)#
+anova(baselineTime2, phaseTime2, groupTime2, phase_group_Time2)#
+summary(phase_group_Time2)#
+by(squeezeData$Time, list(squeezeData$Phase,squeezeData$Group),stat.desc,basic = FALSE)#
+#by(squeezeData$Time, list(squeezeData$Group),stat.desc,basic = FALSE)
+squeezeData <- read.csv("SqueezeDataR.dat", sep = ',',header = TRUE, na.strings = 'NaN')#
+squeezeData$Group <- factor(squeezeData$Group)#
+#squeezeData$Trial <- factor(squeezeData$Trial)#
+squeezeData$Haptic <- factor(squeezeData$Haptic)#
+squeezeData$Phase <- factor(squeezeData$Phase)#
+#
+library( ez); library( ggplot2); library( nlme); library( pastecs); library( reshape); library( WRS2)#
+#
+# standard contrast (Phase1vs2 and Phase1vs3)#
+Phase1vs2 <- c(0,1,0)#
+Phase1vs3 <- c(0,0,1)#
+contrasts(squeezeData$Phase)<-cbind(Phase1vs2,Phase1vs3)#
+#
+baselineInt1 <- lme(IntMag ~ 1, random = ~1|Sub/Phase, data = squeezeData, na.action=na.omit, method = "ML")#
+phaseInt1 <- update(baselineInt1, .~. + Phase)#
+groupInt1 <- update(phaseInt1, .~. + Group)#
+phase_group_Int1 <- update(groupInt1, .~. + Phase:Group)#
+anova(baselineInt1, phaseInt1, groupInt1, phase_group_Int1)#
+summary(phase_group_Int1)#
+by(squeezeData$IntMag, list(squeezeData$Phase,squeezeData$Group),stat.desc,basic = FALSE)#
+#by(squeezeData$IntMag, list(squeezeData$Group),stat.desc,basic = FALSE)#
+#
+# new contrasts (Phase2vs1 and Phase2vs3)#
+Phase2vs1 <- c(1,0,0)#
+Phase2vs3 <- c(0,0,1)#
+contrasts(squeezeData$Phase)<-cbind(Phase2vs1,Phase2vs3)#
+#
+baselineInt2 <- lme(IntMag ~ 1, random = ~1|Sub/Phase, data = squeezeData, na.action=na.omit, method = "ML")#
+phaseInt2 <- update(baselineInt2, .~. + Phase)#
+groupInt2 <- update(phaseInt2, .~. + Group)#
+phase_group_Int2 <- update(groupInt2, .~. + Phase:Group)#
+anova(baselineInt2, phaseInt2, groupInt2, phase_group_Int2)#
+summary(phase_group_Int2)#
+by(squeezeData$IntMag, list(squeezeData$Phase,squeezeData$Group),stat.desc,basic = FALSE)#
+#by(squeezeData$IntMag, list(squeezeData$Group),stat.desc,basic = FALSE)
+squeezeData <- read.csv("SqueezeDataR.dat", sep = ',',header = TRUE, na.strings = 'NaN')#
+squeezeData$Group <- factor(squeezeData$Group)#
+#squeezeData$Trial <- factor(squeezeData$Trial)#
+squeezeData$Haptic <- factor(squeezeData$Haptic)#
+squeezeData$Phase <- factor(squeezeData$Phase)#
+#
+library( ez); library( ggplot2); library( nlme); library( pastecs); library( reshape); library( WRS2)#
+#
+# standard contrast (Phase1vs2 and Phase1vs3)#
+Phase1vs2 <- c(0,1,0)#
+Phase1vs3 <- c(0,0,1)#
+contrasts(squeezeData$Phase)<-cbind(Phase1vs2,Phase1vs3)#
+#
+baselineTime1 <- lme(Time ~ 1, random = ~1|Sub/Phase, data = squeezeData, na.action=na.omit, method = "ML")#
+phaseTime1 <- update(baselineTime1, .~. + Phase)#
+groupTime1 <- update(phaseTime1, .~. + Group)#
+phase_group_Time1 <- update(groupTime1, .~. + Phase:Group)#
+anova(baselineTime1, phaseTime1, groupTime1, phase_group_Time1)#
+summary(phase_group_Time1)#
+by(squeezeData$Time, list(squeezeData$Phase,squeezeData$Group),stat.desc,basic = FALSE)#
+#by(squeezeData$Time, list(squeezeData$Group),stat.desc,basic = FALSE)#
+#
+# new contrasts (Phase2vs1 and Phase2vs3)#
+Phase2vs1 <- c(1,0,0)#
+Phase2vs3 <- c(0,0,1)#
+contrasts(squeezeData$Phase)<-cbind(Phase2vs1,Phase2vs3)#
+#
+baselineTime2 <- lme(Time ~ 1, random = ~1|Sub/Phase, data = squeezeData, na.action=na.omit, method = "ML")#
+phaseTime2 <- update(baselineTime2, .~. + Phase)#
+groupTime2 <- update(phaseTime2, .~. + Group)#
+phase_group_Time2 <- update(groupTime2, .~. + Phase:Group)#
+anova(baselineTime2, phaseTime2, groupTime2, phase_group_Time2)#
+summary(phase_group_Time2)#
+by(squeezeData$Time, list(squeezeData$Phase,squeezeData$Group),stat.desc,basic = FALSE)#
+#by(squeezeData$Time, list(squeezeData$Group),stat.desc,basic = FALSE)

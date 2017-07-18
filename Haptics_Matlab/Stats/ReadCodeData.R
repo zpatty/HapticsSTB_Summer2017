@@ -1,0 +1,5 @@
+squeezeData <- read.csv("SqueezeDataR.dat", sep = ',',header = TRUE, na.strings = 'NaN')
+squeezeData$Group <- factor(squeezeData$Group)
+squeezeData$Trial <- factor(squeezeData$Trial)
+squeezeData$Haptic <- factor(squeezeData$Haptic)
+squeezeData$Phase <- factor(squeezeData$Phase)
